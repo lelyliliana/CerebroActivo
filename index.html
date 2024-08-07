@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerebro Activo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container" id="start-container">
+        <h1>Cerebro Activo</h1>
+        <img src="imagen.jpg" alt="Imagen del juego Cerebro Activo" id="game-image">
+        <p>Bienvenidos a Cerebro Activo. Este juego evalúa conocimientos sobre Pensamiento Computacional.</p>
+        <label for="group-count">¿Cuántos grupos hay?</label>
+        <input type="number" id="group-count" min="1" value="1">
+        <button onclick="addGroups()">Agregar Grupos</button>
+        <div id="group-names"></div>
+        <button onclick="initializeGroups()">Iniciar Juego</button>
+    </div>
+    
+    <div class="container" id="quiz-container" style="display: none;">
+        <h1 id="question">Pregunta</h1>
+        <img id="question-image" src="" alt="Imagen de la pregunta" class="question-answer-image" style="display: none;">
+        <div id="options">
+            <button class="option" onclick="selectAnswer(0)">Opción 1</button>
+            <button class="option" onclick="selectAnswer(1)">Opción 2</button>
+            <button class="option" onclick="selectAnswer(2)">Opción 3</button>
+            <button class="option" onclick="selectAnswer(3)">Opción 4</button>
+        </div>
+        <div id="result"></div>
+        <img id="answer-image" src="" alt="Imagen de la respuesta correcta" class="question-answer-image" style="display: none;">
+        <div id="group-container">
+            <label for="group-select">Selecciona el grupo:</label>
+            <select id="group-select"></select>
+        </div>
+        <button id="confirm-btn" class="center-button" onclick="confirmAnswer()">Confirmar Respuesta</button>
+        <button id="next-btn" class="center-button" onclick="nextQuestion()">Siguiente</button>
+    </div>
+    <div class="container" id="results-container" style="display: none;">
+        <div id="results"></div>
+        <img id="winner-image" src="imagen/trofeo.png" alt="Imagen del trofeo" style="display: none;">
+    </div>
+    <audio id="start-sound" src="sonido.mp3" preload="auto"></audio>
+    <audio id="confirm-sound" src="sonido_pregunta.mp3" preload="auto"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
+
